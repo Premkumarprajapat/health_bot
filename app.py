@@ -4,7 +4,7 @@ import joblib
 model = joblib.load("symptom_model.pkl")
 symptoms = list(pd.read_csv("Training.csv").columns[:-1])
 
-diet_data = pd.read_csv("diet_recommendation_dataset.csv")
+diet_data = pd.read_csv("diet_recommendations_dataset.csv")
 diet_map = diet_data.groupby("Disease")["Diet_Recommendations"]\
     .agg(lambda x: x.value_counts().idxmax()).to_dict()
     
